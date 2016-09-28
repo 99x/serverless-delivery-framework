@@ -29,8 +29,7 @@ provider:
 #  exclude:
 #    - exclude-me.js
 #  artifact: my-service-code.zip
-plugins:
-- serverless-offline
+
 
 functions:
   home:
@@ -42,7 +41,6 @@ functions:
           path: home
           method: get
 
-
   delivery:
     handler: user/userHandler.user
 
@@ -51,6 +49,7 @@ functions:
           path: users/getUsers
           method: get
           request: ${file(./templates.yml):request}
+        
       - http:
           path: users/createUser
           method: post
@@ -59,6 +58,7 @@ functions:
           path: users/getUser
           method: post
           request: ${file(./templates.yml):request}
+
 
 
 
