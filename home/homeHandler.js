@@ -1,6 +1,15 @@
 
-module.exports.home = function(event, context) {
-    var html = '<html><body> <h1>Test release pipeline</h1><script src="https://s3.amazonaws.com/serverless-delivery-framework/v1/add.js"></script></body></html>';
+var page = require('./lib/index.html')
+var db = require('./lib/database')
 
-    context.succeed(html);
+module.exports.home = function(event, context) {
+
+    page.renderHTML("https://s3.amazonaws.com/serverless-delivery-framework/", db.getUserVersion('nuwan'),context);
+/*
+      if (event.headers.Authorization == undefined && event.query.user == undefined) {
+          context.fail(("https://s3.amazonaws.com/serverless-delivery-framework/");
+      } else {
+        context.succeed("success");
+      }
+*/
 };
