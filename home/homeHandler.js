@@ -4,10 +4,10 @@ var db = require('./lib/database')
 
 module.exports.home = function(event, context) {
 
-    page.renderHTML("https://s3.amazonaws.com/serverless-delivery-framework/", db.getUserVersion('1234'),context);
+    page.renderHTML("https://s3.amazonaws.com/serverless-delivery-framework/", db.getUserVersion('nuwan'),context);
 /*
       if (event.headers.Authorization == undefined && event.query.user == undefined) {
-          context.fail(authURL);
+          context.fail(("https://s3.amazonaws.com/serverless-delivery-framework/");
       } else {
         context.succeed("success");
       }
