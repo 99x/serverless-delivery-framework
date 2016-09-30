@@ -1,0 +1,33 @@
+{
+  "name": "serverless-release-pipeline",
+  "version": "1.0.0",
+  "description": "Project for deliver software verstion using serverless framework",
+  "main": "\\",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niroshannrsh/serverless-delivery-framework.git"
+  },
+  "keywords": [
+    "release",
+    "pipeline",
+    "deliver"
+  ],
+  "author": "Niroshan Ranapathi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niroshannrsh/serverless-delivery-framework/issues"
+  },
+  "homepage": "https://github.com/niroshannrsh/serverless-delivery-framework#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-exec": "^2.1.2",
+    "gulp-shell": "^0.5.2",
+    "yargs": "^5.0.0"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}

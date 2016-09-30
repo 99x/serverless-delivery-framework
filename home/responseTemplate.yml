@@ -1,6 +1,0 @@
-response:
-  template:
-    text/html: >
-      {
-        $input.json('$')
-      }

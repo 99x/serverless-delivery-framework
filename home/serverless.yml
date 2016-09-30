@@ -17,6 +17,10 @@ provider:
   name: aws
   runtime: nodejs4.3
 
+plugins:
+  - serverless-offline
+#  - serverless-dynamodb-local
+
 # you can overwrite defaults here
 #defaults:
 #  stage: dev
@@ -40,6 +44,10 @@ functions:
       - http:
           path: home
           method: get
+          response:
+             headers:
+               Content-Type: "'text/html'"
+             template: $input.path('$')
 
   delivery:
     handler: user/userHandler.user
@@ -49,7 +57,7 @@ functions:
           path: users/getUsers
           method: get
           request: ${file(./templates.yml):request}
-        
+
       - http:
           path: users/createUser
           method: post

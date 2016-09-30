@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "jsend": "^1.0.2"
+    "jsend": "^1.0.2",
+    "lodash": "^4.16.2"
   },
   "devDependencies": {
     "serverless-offline": "git+https://github.com/dherault/serverless-offline.git/#serverless_v1"
@@ -12,6 +13,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Niroshan Ranapathi",
   "license": "MIT"
 }
