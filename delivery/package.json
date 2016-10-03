@@ -1,27 +1,33 @@
 {
-  "name": "client-angular",
-  "version": "1.0.0",
-  "description": "Angular@1.x client app for the serverless boilerplate",
-  "main": "index.js",
-  "author": "Manoj Fernando <manojf@99x.lk>",
-  "license": "MIT",
-  "script": {
-    "start": "gulp server"
+  "name": "angular-material-starter",
+  "description": "A boilerplate for Material Design applications using Angular 1.x and Angular Material",
+  "version": "0.2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakemanzo/angualr-material-starter.git"
   },
+  "license": "MIT",
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-animate": "^1.5.8",
-    "angular-aria": "^1.5.8",
-    "angular-jwt": "0.0.9",
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-aria": "^1.5.7",
     "angular-material": "^1.1.0-rc.5",
-    "angular-messages": "^1.5.8",
-    "angular-storage": "0.0.15",
     "angular-ui-router": "^0.3.1",
-    "bluebird": "^3.4.1",
-    "whatwg-fetch": "^1.0.0"
+    "express": "^4.13.3"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-server-livereload": "^1.8.2"
-  }
+    "http-server": "^0.6.1"
+  },
+  "engines": {
+    "node": "0.12.2"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/blakemanzo/angualr-material-starter/issues"
+  },
+  "homepage": "https://github.com/blakemanzo/angualr-material-starter#readme",
+  "main": "index.js",
+  "author": ""
 }
