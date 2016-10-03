@@ -17,14 +17,14 @@ provider:
   name: aws
   runtime: nodejs4.3
 
-plugins:
-  - serverless-offline
+#plugins:
+#  - serverless-offline
 #  - serverless-dynamodb-local
 
-# you can overwrite defaults here
-#defaults:
-#  stage: dev
-#  region: us-east-1
+
+defaults:
+  stage: dev
+  region: us-east-1
 
 # you can add packaging information here
 #package:
@@ -48,7 +48,7 @@ functions:
              headers:
                Content-Type: "'text/html'"
              template: $input.path('$')
-             
+
   delivery:
     handler: user/userHandler.user
 

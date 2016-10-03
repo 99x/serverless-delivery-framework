@@ -59,7 +59,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "1475239588130-2016-09-30T12:46:28.130Z/aws-nodejs.zip"
+          "S3Key": "1475472439433-2016-10-03T05:27:19.433Z/aws-nodejs.zip"
         },
         "FunctionName": "aws-nodejs-dev-home",
         "Handler": "homeHandler.home",
@@ -81,7 +81,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "1475239588130-2016-09-30T12:46:28.130Z/aws-nodejs.zip"
+          "S3Key": "1475472439433-2016-10-03T05:27:19.433Z/aws-nodejs.zip"
         },
         "FunctionName": "aws-nodejs-dev-delivery",
         "Handler": "user/userHandler.user",
@@ -622,7 +622,7 @@
         }
       }
     },
-    "ApiGatewayDeployment1475239588148": {
+    "ApiGatewayDeployment1475472439447": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
