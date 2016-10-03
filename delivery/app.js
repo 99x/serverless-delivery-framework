@@ -60,9 +60,8 @@ app.controller('Ctrl', function($scope, $filter, $http) {
     };
 
     $scope.saveUser = function(data, id) {
-        //$scope.user not updated yet
         console.log(JSON.stringify(data));
-        $http.post('https://ezh9ingj6l.execute-api.us-east-1.amazonaws.com/dev/createUser', data).then(function(response) {
+        $http.post('https://ezh9ingj6l.execute-api.us-east-1.amazonaws.com/dev/users/createUser', data).then(function(response) {
               $scope.users = response.data.data.Items;
 
           });
@@ -88,30 +87,5 @@ app.controller('Ctrl', function($scope, $filter, $http) {
 
 // --------------- mock $http requests ----------------------
 app.run(function($http) {
-  /*
-    $httpBackend.whenGET('/groups').respond([{
-        id: 1,
-        text: 'user'
-    }, {
-        id: 2,
-        text: 'customer'
-    }, {
-        id: 3,
-        text: 'vip'
-    }, {
-        id: 4,
-        text: 'admin'
-    }]);
 
-
-
-
-    $httpBackend.whenPOST(/\/saveUser/).respond(function(method, url, data) {
-        data = angular.fromJson(data);
-        return [200, {
-            status: 'ok'
-        }];
-    });
-
-    */
 });

@@ -28,6 +28,7 @@
     "yargs": "^5.0.0"
   },
   "dependencies": {
+    "gulp-server-livereload": "^1.8.4",
     "underscore": "^1.8.3"
   }
 }
