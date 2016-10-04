@@ -12,21 +12,19 @@
         <h3>1. Clone and Install Depandancies</h3>
 
         <pre><code>$ git clone https://github.com/99xt/serverless-delivery-framework.git
-    $ cd serverless-delivery-framework && npm install
-    $ gulp dependancy-install</code>
+          $ cd serverless-delivery-framework && npm install
+          $ gulp dependancy-install</code>
     </pre>
         <h3>2. Create s3 Bucket and Configure</h3>
 
         <pre>
           <code>$ gulp create-S3Bucket --name {YOUR-S3-Bucket-Name}
-    $ gulp config-S3Bucket --name {YOUR-S3-Bucket-Name}
+            $ gulp config-S3Bucket --name {YOUR-S3-Bucket-Name}
   </code>
     </pre>
 
         <h3>3. Serve Delivery Framework web client</h3>
-        <pre>
-      <code>$ gulp serve-client
-</code>
+        <pre><code>$ gulp serve-client</code>
 </pre>
 
         <h2>Deploy Application client and Backend Lambda Functiom</h2>
