@@ -6,12 +6,28 @@
 
     <section>
         <h1>Introduction</h1>
-        <p>In software development process continuous delivery is important part that is most cost effective thing when we use in house servers. But when applying the tool and technique that exist for serverless application framework and platforms that is alternative for save cost. This application is a fundamental application for continous delivery with serverless architechture in Amazon Web Services (AWS)</p>
+        <p>In software development process continuous delivery is important part that is most cost effective thing when we use in house servers. But when applying the tool and technique that exist for serverless application framework and platforms that is
+            alternative for save cost. This application is a fundamental application for continous delivery with serverless architechture in Amazon Web Services (AWS)</p>
 
         <h2>Application Architechture</h2>
-        <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true" ></p>
-        
-        <h2>Setup Development Enviroment</h2>
+        <p>Seerverless Delivery Framework is just appliation of serverless platforms to deliver software versions to diffent users. Application users can use software diffent versions parallelly. Using this application system admin, developers can switch
+            software versions for differnt end user. This framework can be used for any serverless framework related project.</p>
+        <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true"></p>
+        <p> The diagrame above shows the technology used to deliver software version for simple web applicatin. Let's lokk at what each componet provides</p>
+        <ul>
+            <li><strong>AWS <a href="https://aws.amazon.com" target="_blank">C</a></strong> – All the techonlogies based on Amazon Web Services (AWS)</li>
+            <li><strong>AWS&nbsp;<a href="https://aws.amazon.com/s3/" target="_blank"></a> API Gateway</strong> – Each action in the pipeline can create a new artifact. The artifact becomes an output from the action in the pipeline and is stored in
+                an S3 bucket to become an input for the next action.</li>
+            <li><strong>AWS <a href="https://aws.amazon.com/lambda/" target="_blank">Lambda</a></strong> – You create Lambda functions to do the work of individual actions in the pipeline. For example, running a gulp task on a repository is handled by a Lambda
+                function.</li>
+            <li><strong>AWS<a href="https://www.npmjs.com/" target="_blank">S3</a> and <a href="http://gulpjs.com/" target="_blank">Gulp</a></strong> – NPM is used for resolving all the dependencies of a given repository. Gulp is used for defining the tasks
+                of the repository, such as running unit tests and packaging artifacts.</li>
+            <li><strong>Testing tools</strong> – <a href="http://jshint.com/" target="_blank">JSHint</a> is used for performing static analysis of the code, <a href="https://mochajs.org/" target="_blank">Mocha</a> is a unit test framework for JavaScript and
+                <a href="http://chaijs.com/" target="_blank">Chai</a> is a BDD assertion library for describing the unit tests.</li>
+            <li><strong>AWS <a href="https://aws.amazon.com/cloudformation/" target="_blank">CloudFormation</a></strong> – CFN templates are used to create and update all these resources in a serverless stack.</li>
+        </ul>
+
+        <h2>Setup Application</h2>
         <h3>1. Clone and Install Depandancies</h3>
 
         <pre><code>$ git clone https://github.com/99xt/serverless-delivery-framework.git
