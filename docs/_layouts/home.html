@@ -15,18 +15,18 @@
         <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true"></p>
         <p> The diagrame above shows the technology used to deliver software version for simple web application. Let's look at what each componet provides</p>
         <ul>
-            <li><strong>AWS <a href="https://aws.amazon.com" target="_blank"></a></strong> – All the techonlogies based on Amazon Web Services (AWS)</li>
-            <li><strong>&nbsp;<a href="https://aws.amazon.com/s3/" target="_blank"></a> API Gateway</strong> – When user request application URL. if user is unautherized it is redirect for authentication otherwise apigaway respond user relevent software version
+            <li><strong>AWS </strong> <br>– All the techonlogies based on Amazon Web Services (AWS)</li>
+            <li><strong>API Gateway</strong><br> – When user request application URL. if user is unautherized it is redirect for authentication otherwise apigaway respond user relevent software version
                 index page using indexpage lambda function </li>
-            <li><strong>Index Page Lambda<a href="https://aws.amazon.com/lambda/" target="_blank"></a></strong> – You create Lambda functions to do the work of individual actions in the pipeline. For example, running a gulp task on a repository is handled
+            <li><strong>Index Page Lambda</strong><br> – You create Lambda functions to do the work of individual actions in the pipeline. For example, running a gulp task on a repository is handled
                 by a Lambda function.
             </li>
-            <li><strong>Authentication Application<a href="https://www.npmjs.com/" target="_blank"></a>  <a href="http://gulpjs.com/" target="_blank"></a></strong> – Authenticate unautherized users this application can be any other service such as Auth0,
+            <li><strong>Authentication Application</strong> <br>– Authenticate unautherized users this application can be any other service such as Auth0,
                 Cognito etc. after sucessfull authentication redirect api gateway then api gateway relevent software versions for autherized user. of the repository, such as running unit tests and packaging artifacts.</li>
-            <li><strong>Index Page Lambda Function<a href="https://www.npmjs.com/" target="_blank"></a></strong>- This lambda function dynamiclly generate application client index.html page
+            <li><strong>Index Page Lambda Function</strong><br>- This lambda function dynamiclly generate application client index.html page
             </li>
             <li><strong>S3 Bucket</strong>
-                <a href="http://jshint.com/" target="_blank"></a> - All the client applications are store in here. When deply new version this bucket authomatically create new folder and store all files in that folder.
+                <br> - All the client applications are store in here. When deply new version this bucket authomatically create new folder and store all files in that folder.
             </li>
 
         </ul>
@@ -36,9 +36,7 @@
         <h3>1. Clone and Install Depandancies</h3>
         <p> Clone or download source from github</p>
 
-        <pre><code>$ git clone https://github.com/99xt/serverless-delivery-framework.git
-          $ cd serverless-delivery-framework && npm install
-          $ gulp dependancy-install</code>
+        <pre><code>$ git clone https://github.com/99xt/serverless-delivery-framework.git</code>
     </pre>
         <p>Install all npm dependancies </p>
         <pre>
@@ -61,10 +59,13 @@
 
         <h2>Deploy Application</h2>
 
-        <pre><code>$ gulp deploy-webclient --version {Application-Version}
-$ gulp deploy-authApp #
-$ gulp deploy-api --stage {Stage-Name}</code>
-</pre>
+        <pre>
+          <code>
+            $ gulp deploy-webclient --version {Application-Version}
+            $ gulp deploy-authApp #
+            $ gulp deploy-api --stage {Stage-Name}
+          </code>
+        </pre>
 
     </section>
 
