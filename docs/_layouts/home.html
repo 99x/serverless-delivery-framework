@@ -1,4 +1,4 @@
-{% include header.html %} {% include banner.html %}
+{% include header.html %}
 
 <div class="wrapper">
 
@@ -32,7 +32,7 @@
         <p>Install all npm dependancies </p>
         <pre>
           <code>$ cd serverless-delivery-framework && npm install
-                $ gulp dependancy-install
+            $ gulp dependancy-install
           </code>
 </pre>
 
@@ -51,9 +51,8 @@
         <h2>Deploy Application</h2>
 
         <pre>
-          <code>
-            $ gulp deploy-webclient --version {Application-Version}
-            $ gulp deploy-authApp #
+          <code>$ gulp deploy-webclient --version {Application-Version}
+            $ gulp deploy-authApp
             $ gulp deploy-api --stage {Stage-Name}
           </code>
         </pre>
