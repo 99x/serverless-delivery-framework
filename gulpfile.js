@@ -4,7 +4,8 @@
 var gulp = require('gulp'),
     shell = require('gulp-shell'),
     args = require('yargs').argv,
-    webserver = require('gulp-server-livereload');
+    webserver = require('gulp-server-livereload'),
+    jeditor = require("gulp-json-editor");
 
 gulp.task('deploy-webclient', function() {
     return shell.task([
@@ -17,6 +18,15 @@ gulp.task('deploy-authApp', function() {
         'aws s3 sync ./build/ s3://serverless-delivery-framework/authApp --region us-east-1'
     ])
 });
+
+gulp.task('writejs', function () {
+  gulp.src("./config.json")
+  .pipe(jeditor({
+    'version': '1.2.3'
+  }))
+  .pipe(gulp.dest("./config"))
+
+})
 
 gulp.task('create-S3Bucket', function(){
   return shell.task(['aws s3 mb s3://'+args.name])
