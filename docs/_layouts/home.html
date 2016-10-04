@@ -14,23 +14,14 @@
             software versions for differnt end user. This framework can be used for any serverless framework related project.</p>
         <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true"></p>
         <p> The diagrame above shows the technology used to deliver software version for simple web application. Let's look at what each componet provides</p>
-        <ul>
-            <li><strong>AWS </strong> <br>– All the techonlogies based on Amazon Web Services (AWS)</li>
-            <li><strong>API Gateway</strong><br> – When user request application URL. if user is unautherized it is redirect for authentication otherwise apigaway respond user relevent software version
-                index page using indexpage lambda function </li>
-            <li><strong>Index Page Lambda</strong><br> – You create Lambda functions to do the work of individual actions in the pipeline. For example, running a gulp task on a repository is handled
-                by a Lambda function.
-            </li>
-            <li><strong>Authentication Application</strong> <br>– Authenticate unautherized users this application can be any other service such as Auth0,
-                Cognito etc. after sucessfull authentication redirect api gateway then api gateway relevent software versions for autherized user. of the repository, such as running unit tests and packaging artifacts.</li>
-            <li><strong>Index Page Lambda Function</strong><br>- This lambda function dynamiclly generate application client index.html page
-            </li>
-            <li><strong>S3 Bucket</strong>
-                <br> - All the client applications are store in here. When deply new version this bucket authomatically create new folder and store all files in that folder.
-            </li>
-
-        </ul>
-
+        <h3>API Gateway</h3>
+        <p> When user request application URL. if user is unautherized it is redirect for authentication otherwise apigaway respond user relevent software version index page using indexpage lambda function</p>
+        <h3> Index Page Lambda</h3>
+        <p> This lambda function dynamiclly generate application client index.html page.</p>
+        <h3> Authentication Application</h3>
+        <p> Authenticate unautherized users this application can be any other service such as Auth0, Cognito etc. after sucessfull authentication redirect api gateway then api gateway relevent software versions for autherized user.</p>
+        <h3>S3 Bucket</h3>
+        <p> All the client applications are store in here. When deply new version this bucket authomatically create new folder and store all files in that folder.</P>
 
         <h2>Setup Application</h2>
         <h3>1. Clone and Install Depandancies</h3>
