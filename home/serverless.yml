@@ -1,15 +1,3 @@
-# Welcome to Serverless!
-#
-# This file is the main config file for your service.
-# It's very minimal at this point and uses default values.
-# You can always add more config options for more control.
-# We've included some commented out config examples here.
-# Just uncomment any of them to get that config option.
-#
-# For full config options, check the docs:
-#    v1.docs.serverless.com
-#
-# Happy Coding!
 
 service: aws-nodejs # NOTE: update this with your service name
 
@@ -21,10 +9,10 @@ plugins:
   - serverless-offline
 #  - serverless-dynamodb-local
 
-# you can overwrite defaults here
-#defaults:
-#  stage: dev
-#  region: us-east-1
+
+defaults:
+  stage: dev
+  region: us-east-1
 
 # you can add packaging information here
 #package:
@@ -50,7 +38,7 @@ functions:
              template: $input.path('$')
 
   delivery:
-    handler: user/userHandler.user
+    handler: lib/users/usersHandler.users
 
     events:
       - http:

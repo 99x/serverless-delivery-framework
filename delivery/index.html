@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User version</title>
+    <!-- Bootstrap 3 css -->
+    <link href="angular-xeditable/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Angular.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+    <!-- Angular-xeditable -->
+    <link href="angular-xeditable/css/xeditable.css" rel="stylesheet">
+    <script src="angular-xeditable/js/xeditable.js"></script>
+    <!-- app.js -->
+    <script src="app.js"></script>
+</head>
+
+<body style="padding: 20px">
+
+    <div ng-controller="Ctrl">
+        <!-- editable element -->
+
+        <table class="table table-bordered table-hover table-condensed">
+            <tr style="font-weight: bold">
+                <td style="width:5%">id</td>
+                <td style="width:35%">Name</td>
+                <td style="width:20%">Version</td>
+
+                <td style="width:25%">Edit</td>
+            </tr>
+            <tr ng-repeat="user in users">
+                <td>
+                    <!-- editable username (text with validation) -->
+                    <span editable-text="user.id" e-name="id"  e-form="rowform" e-required>
+       {{ user.id }}
+     </span>
+                </td>
+                <td>
+                    <!-- editable username (text with validation) -->
+                    <span editable-text="user.name" e-name="name" e-form="rowform" onbeforesave="checkName($data, user.id)" e-required>
+         {{ user.name || 'empty' }}
+       </span>
+                </td>
+                <td>
+                    <!-- editable status (select-local) -->
+                    <span editable-select="user.version" e-name="version" e-form="rowform" e-ng-options="s.value as s.text for s in statuses">
+         {{  user.version }}
+       </span>
+                </td>
+
+                <td style="white-space: nowrap">
+                    <!-- form -->
+                    <form editable-form name="rowform" onbeforesave="saveUser($data, user.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
+                        <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+           save
+         </button>
+                        <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+           cancel
+         </button>
+                    </form>
+                    <div class="buttons" ng-show="!rowform.$visible">
+                        <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+                        <button class="btn btn-danger" ng-click="removeUser($index)">del</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <button class="btn btn-default" ng-click="addUser()">Add row</button>
+    </div>
+</body>
+
+</html>

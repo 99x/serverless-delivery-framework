@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "aws-sdk": "^2.6.6",
     "jsend": "^1.0.2",
     "lodash": "^4.16.2"
   },
