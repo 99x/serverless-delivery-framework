@@ -38,24 +38,22 @@
 
         <h3>2. Create s3 Bucket and Configure</h3>
         <p>Create simple storage service (S3) bucket for store client application source</p>
-        <pre>
-          <code>$ gulp create-S3Bucket --name {YOUR-S3-Bucket-Name}
-            $ gulp config-S3Bucket --name {YOUR-S3-Bucket-Name}
-          </code>
-        </pre>
+        <pre><code>$ gulp create-S3Bucket --name {YOUR-S3-Bucket-Name}</code></pre>
+
+      <p>Add bucket policy and comfigure for static web hosting</p>
+      <pre><code>$ gulp config-S3Bucket --name {YOUR-S3-Bucket-Name}</code></pre>
+
 
         <h3>3. Serve Delivery Framework web client</h3>
-        <pre><code>$ gulp serve-client</code>
-</pre>
+        <pre><code>$ gulp serve-client</code></pre>
 
         <h2>Deploy Application</h2>
-
-        <pre>
-          <code>$ gulp deploy-webclient --version {Application-Version}
-            $ gulp deploy-authApp
-            $ gulp deploy-api --stage {Stage-Name}
-          </code>
-        </pre>
+        <p>Deploy your application client on S3 bucket. When execute follow command automatically create folder for application version</p>
+        <pre><code>$ gulp deploy-webclient --version {Application-Version}</code></pre>
+        <p> If needed deploy your authecation application. same S3 bucket can be used. This is depend on application requrement</p>
+        <pre><code>$ gulp deploy-authApp </code><pre>
+        <p></p>
+        <pre><code>  $ gulp deploy-api --stage {Stage-Name}</code></pre>
 
     </section>
 
