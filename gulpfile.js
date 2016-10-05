@@ -1,6 +1,4 @@
 'use strict';
-
-
 var gulp = require('gulp'),
     shell = require('gulp-shell'),
     args = require('yargs').argv,
@@ -21,14 +19,18 @@ gulp.task('deploy-authApp', function() {
 
 gulp.task('writejs', function () {
   gulp.src("./config.json")
-  .pipe(jeditor({
-    'version': '1.2.3'
-  }))
-  .pipe(gulp.dest("./config"))
+    .pipe(jeditor({
+      'version': '1.2.3'
+    }))
+    .pipe(gulp.dest("./config"));
 
 })
 
-gulp.task('create-S3Bucket', function(){
+gulp.task('show',function () {
+  return shell.task(['echo hsdhs'])
+})
+
+gulp.task('gulp ', function(){
   return shell.task(['aws s3 mb s3://'+args.name])
 });
 

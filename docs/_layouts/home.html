@@ -23,35 +23,47 @@
         <h3>S3 Bucket</h3>
         <p> All the client applications are store in here. When deply new version this bucket authomatically create new folder and store all files in that folder.</P>
 
+        <h1>Getting Started</h1>
         <h2>Setup Application</h2>
         <h3>1. Clone and Install Depandancies</h3>
         <p> Clone or download source from github</p>
 
         <pre><code>$ git clone https://github.com/99xt/serverless-delivery-framework.git</code></pre>
         <p>Install all npm dependancies </p>
-        <pre>
-          <code>$ cd serverless-delivery-framework && npm install
-            $ gulp dependancy-install
-          </code>
-</pre>
+        <pre><code>$ cd serverless-delivery-framework && npm install</code></pre>
+        <pre><code>$ gulp dependancy-install</code></pre>
 
-        <h3>2. Create s3 Bucket and Configure</h3>
+        <h3>2. Create Application Client</h3>
+        <p>You can use web folder to store your client application. This folder can be contain client app related file such as javascript, css etc. You can structure this folder according to your requrement. This folder is use only when you develop your client application in your local machine.</p>
+        <p> This applicatiion contain contain simple index.html page if you needed you can replace it by your source code.</p>
+
+        <pre><code>REPLACE web FOLDER BY CLIENT-APP</code></pre>
+
+        <h2>Run Application</h2>
+        <h3>1. Running the Delivery Framework Dashbord</h3>
+        <pre><code>$ gulp serve-client</code></pre>
+
+        <h3>2. Running the Application Client</h3>
+        <pre><code>$ gulp serve-client</code></pre>
+
+        <h3>3. Running the Application API Gateways</h3>
+        <pre><code>$ gulp deploy-api-offline </code></pre>
+
+
+        <h2>Deploy Application</h2>
+
+        <h3>1. Create s3 Bucket and Configure</h3>
         <p>Create simple storage service (S3) bucket for store client application source</p>
         <pre><code>$ gulp create-S3Bucket --name {YOUR-S3-Bucket-Name}</code></pre>
 
-      <p>Add bucket policy and comfigure for static web hosting</p>
-      <pre><code>$ gulp config-S3Bucket --name {YOUR-S3-Bucket-Name}</code></pre>
+        <p>Add bucket policy and comfigure for static web hosting</p>
+        <pre><code>$ gulp config-S3Bucket --name {YOUR-S3-Bucket-Name}</code></pre>
 
-
-        <h3>3. Serve Delivery Framework web client</h3>
-        <pre><code>$ gulp serve-client</code></pre>
-
-        <h2>Deploy Application</h2>
         <p>Deploy your application client on S3 bucket. When execute follow command automatically create folder for application version</p>
         <pre><code>$ gulp deploy-webclient --version {Application-Version}</code></pre>
         <p> If needed deploy your authecation application. same S3 bucket can be used. This is depend on application requrement</p>
-        <pre><code>$ gulp deploy-authApp </code><pre>
-        <p>Deploy api gateway</p>
+        <pre><code>$ gulp deploy-authApp </code></pre>
+        <p></p>
         <pre><code>  $ gulp deploy-api --stage {Stage-Name}</code></pre>
 
     </section>

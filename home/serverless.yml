@@ -6,7 +6,10 @@ provider:
   runtime: nodejs4.3
 
 plugins:
+  - serverless-dynamodb-local
   - serverless-offline
+
+#
 #  - serverless-dynamodb-local
 
 
