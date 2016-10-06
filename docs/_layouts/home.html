@@ -6,8 +6,27 @@
 
     <section>
         <h1>Introduction</h1>
+        <p>Today difficult to release different software version for differnt user without maintaining servers. This framework is the solution for the this senario.</p>
+
         <p>In software development process continuous delivery is important part that is most cost effective thing when we use in house servers. But when applying the tool and technique that exist for serverless application framework and platforms that is
             alternative for save cost. This application is a fundamental application for continous delivery with serverless architechture in Amazon Web Services (AWS)</p>
+        <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/introduction.jpg?raw=true"></p>
+        <h2>Features and Limitations</h2>
+        <h3>Features</h3>
+        <ul>
+            <li>Support for Continuous Integration, Development and Delivery</li>
+            <li>Can be run diffent software version pararelly </li>
+            <li>Can be assigend and switch different users for diffrent software version</li>
+            <li>All the deployment process can be automated</li>
+        </ul>
+
+        <h3>Limitation</h3>
+        <ul>
+            <li>Support only aws serverless application</li>
+            <li>Database should be schema less</li>
+            <li>Support only 15 api gateway stages. But not limitation for client application</li>
+        </ul>
+
 
         <h2>Application Architechture</h2>
         <p>Seerverless Delivery Framework is just appliation of serverless platforms to deliver software versions to diffent users. Application users can use software diffent versions parallelly. Using this application system admin, developers can switch
@@ -34,7 +53,8 @@
         <pre><code>$ gulp dependancy-install</code></pre>
 
         <h3>2. Create Application Client</h3>
-        <p>You can use web folder to store your client application. This folder can be contain client app related file such as javascript, css etc. You can structure this folder according to your requrement. This folder is use only when you develop your client application in your local machine.</p>
+        <p>You can use web folder to store your client application. This folder can be contain client app related file such as javascript, css etc. You can structure this folder according to your requrement. This folder is use only when you develop your
+            client application in your local machine.</p>
         <p> This applicatiion contain contain simple index.html page if you needed you can replace it by your source code.</p>
 
         <pre><code>REPLACE web FOLDER BY CLIENT-APP</code></pre>

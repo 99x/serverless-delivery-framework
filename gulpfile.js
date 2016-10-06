@@ -17,30 +17,30 @@ gulp.task('deploy-authApp', function() {
     ])
 });
 
-gulp.task('writejs', function () {
-  gulp.src("./config.json")
-    .pipe(jeditor({
-      'version': '1.2.3'
-    }))
-    .pipe(gulp.dest("./config"));
+gulp.task('writejs', function() {
+    gulp.src("./config.json")
+        .pipe(jeditor({
+            'version': '1.2.3'
+        }))
+        .pipe(gulp.dest("./config"));
 
 })
 
-gulp.task('show',function () {
-  return shell.task(['echo hsdhs'])
+gulp.task('show', function() {
+    return shell.task(['echo hsdhs'])
 })
 
-gulp.task('gulp ', function(){
-  return shell.task(['aws s3 mb s3://'+args.name])
+gulp.task('gulp ', function() {
+    return shell.task(['aws s3 mb s3://' + args.name])
 });
 
 gulp.task('config-S3Bucket');
-gulp.task('s3-hostPolicy', function(){
-  return shell.task(['aws s3api put-bucket-policy --bucket '+args.name+' --policy file://s3bucket_website_hosting_policy.json'])
+gulp.task('s3-hostPolicy', function() {
+    return shell.task(['aws s3api put-bucket-policy --bucket ' + args.name + ' --policy file://s3bucket_website_hosting_policy.json'])
 });
 
-gulp.task('s3-websiteConfig', function(){
-  return shell.task(['aws s3api put-bucket-website --bucket '+args.name+' --website-configuration file://s3bucket_website_configuration.json'])
+gulp.task('s3-websiteConfig', function() {
+    return shell.task(['aws s3api put-bucket-website --bucket ' + args.name + ' --website-configuration file://s3bucket_website_configuration.json'])
 });
 
 
@@ -54,23 +54,23 @@ gulp.task('serve-client', function() {
         }));
 });
 
-gulp.task('main-dependency',function(){
-  return shell.task([
-    'npm install'
-  ])
+gulp.task('main-dependency', function() {
+    return shell.task([
+        'npm install'
+    ])
 });
-gulp.task('web-dependency',function(){
-  return shell.task([
-    'cd web','npm install','cd ..'
-  ])
+gulp.task('web-dependency', function() {
+    return shell.task([
+        'cd web', 'npm install', 'cd ..'
+    ])
 });
-gulp.task('home-dependency',function(){
-  return shell.task([
-    'cd home','npm install','cd ..'
-  ])
+gulp.task('home-dependency', function() {
+    return shell.task([
+        'cd home', 'npm install', 'cd ..'
+    ])
 });
-gulp.task('delivery-dependency',function(){
-  return shell.task([
-    'cd delivery','npm install','cd ..'
-  ])
+gulp.task('delivery-dependency', function() {
+    return shell.task([
+        'cd delivery', 'npm install', 'cd ..'
+    ])
 });
