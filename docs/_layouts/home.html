@@ -34,13 +34,15 @@
         <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true"></p>
         <p> The diagrame above shows the technology used to deliver software version for simple web application. Let's look at what each componet provides</p>
         <h3>API Gateway</h3>
-        <p> When user request application URL. if user is unautherized it is redirect for authentication otherwise apigaway respond user relevent software version index page using indexpage lambda function</p>
+        <p>  Api gateway can be contain deferent api gateway stages. Those stages has separate lambda function.But every stage should be index page lambda function.When user request application URL.(eg. https://testapi.us-east-1.amazonaws.com/dev/home ) if user is unautherized it is redirect for authentication otherwise apigaway respond user relevent software version index page using indexpage lambda function. AWS api gateway can be store conatain only 15 stages. Then there is a limitation for api gateway deplyment</p>
         <h3> Index Page Lambda</h3>
-        <p> This lambda function dynamiclly generate application client index.html page.</p>
+        <p> This lambda function dynamiclly generate application client index.html page after the </p>
+        <h3>User Version Dynamodb Table</h3>
+        <p> This table contatin user id, user relevent version and other information.</p>
         <h3> Authentication Application</h3>
-        <p> Authenticate unautherized users this application can be any other service such as Auth0, Cognito etc. after sucessfull authentication redirect api gateway then api gateway relevent software versions for autherized user.</p>
+        <p> Authenticate unautherized users this application can be any other service such as Auth0, Cognito etc. after sucessfull authentication redirect to api gateway then api gateway relevent software versions for autherized user.</p>
         <h3>S3 Bucket</h3>
-        <p> All the client applications are store in here. When deply new version this bucket authomatically create new folder and store all files in that folder.</P>
+        <p> This used for the client side application deployment. When deply new version of software this bucket authomatically create new folder and store all files contain that folder. We can create large number of folders in s3 bucket then there is no restriction  for large number of deplyment client application</P>
 
         <h1>Getting Started</h1>
         <h2>Setup Application</h2>
