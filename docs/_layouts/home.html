@@ -6,9 +6,10 @@
 
     <section>
         <h1>Introduction</h1>
-        <p>Today difficult to release different software version for differnt user without maintaining servers. For the maintaining servers is the cost effective thing for the medium sized company and small (startups) company. This framework is the solution for the this senario.</p>
+        <p>Today difficult to release different software version for differnt user without maintaining servers. For the maintaining servers is the cost effective thing for the medium sized company and small (startups) company. This framework is the solution
+            for the this senario.</p>
         <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/intoduction.jpg?raw=true"></p>
-        <p>Using this framework you can release  different versions for differnt users. This application applying the tool and technique that exist for serverless application framework and platforms for the overcome problem.</p>
+        <p>Using this framework you can release different versions for differnt users. This application applying the tool and technique that exist for serverless application framework and platforms for the overcome problem.</p>
         <h2>Features and Limitations</h2>
         <h3>Features</h3>
         <ul>
@@ -26,6 +27,22 @@
             <li>Application Authenctication part should be sapareted as another service </li>
         </ul>
         <h2>Technologies</h2>
+        <h3>Frameworks and Services</h3>
+        <ul>
+            <li><a href="https://serverless.com/">Serverless Framework</a></li>
+            <li><a href="https://serverless.com/">AWS API Gateways</a></li>
+            <li><a href="https://serverless.com/">AWS Lambda Function</a></li>
+            <li><a href="https://serverless.com/">AWS S3 Bucket</a></li>
+            <li><a href="https://serverless.com/">AWS DynamoDB </a></li>
+        </ul>
+        <h3>Dependancy Management</h3>
+        <ul>
+            <li><a href="https://www.npmjs.com/">NPM Packages</a></li>
+        </ul>
+        <h3>Build Authomation</h3>
+        <ul>
+            <li><a href="http://gulpjs.com/">GulpJs</a></li>
+        </ul>
 
 
         <h2>Application Architechture</h2>
@@ -34,7 +51,9 @@
         <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true"></p>
         <p> The diagrame above shows the technology used to deliver software version for simple web application. Let's look at what each componet provides</p>
         <h3>API Gateway</h3>
-        <p>  Api gateway can be contain deferent api gateway stages. Those stages has separate lambda function.But every stage should be index page lambda function.When user request application URL.(eg. https://testapi.us-east-1.amazonaws.com/dev/home ) if user is unautherized it is redirect for authentication otherwise apigaway respond user relevent software version index page using indexpage lambda function. AWS api gateway can be store conatain only 15 stages. Then there is a limitation for api gateway deplyment</p>
+        <p> Api gateway can be contain deferent api gateway stages. Those stages has separate lambda function.But every stage should be index page lambda function.When user request application URL.(eg. https://testapi.us-east-1.amazonaws.com/dev/home ) if
+            user is unautherized it is redirect for authentication otherwise apigaway respond user relevent software version index page using indexpage lambda function. AWS api gateway can be store conatain only 15 stages. Then there is a limitation for
+            api gateway deplyment</p>
         <h3> Index Page Lambda</h3>
         <p> This lambda function dynamicaly generate application client index.html page after the </p>
         <h3>User Version Dynamodb Table</h3>
@@ -42,7 +61,8 @@
         <h3> Authentication Application</h3>
         <p> Authenticate unautherized users this application can be any other service such as Auth0, Cognito etc. after sucessfull authentication redirect to api gateway then api gateway relevent software versions for autherized user.</p>
         <h3>S3 Bucket</h3>
-        <p> This used for the client side application deployment. When deply new version of software this bucket authomatically create new folder and store all files contain that folder. We can create large number of folders in s3 bucket then there is no restriction  for large number of deplyment client application</P>
+        <p> This used for the client side application deployment. When deply new version of software this bucket authomatically create new folder and store all files contain that folder. We can create large number of folders in s3 bucket then there is no
+            restriction for large number of deplyment client application</P>
 
         <h1>Getting Started</h1>
         <h2>Setup Application</h2>
