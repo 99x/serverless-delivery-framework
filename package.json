@@ -24,6 +24,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-exec": "^2.1.2",
+    "gulp-html-replace": "^1.6.1",
     "gulp-shell": "^0.5.2",
     "yargs": "^5.0.0"
   },

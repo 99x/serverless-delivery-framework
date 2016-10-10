@@ -4,18 +4,110 @@ service: aws-nodejs # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs4.3
+custom:
+   defaultRegion: us-east-1
+   region: ${opt:region, self:custom.defaultRegion}
+   stage: ${opt:stage, env:USER}
+   standardRequest:
+      template:
+         application/json: ${file(./templates.yml):request}
+   standardResponseHeaders:
+      'Access-Control-Allow-Origin': "'*'"
+      'Content-Type': 'integration.response.body.headers.Content-Type'
+      'Expires': 'integration.response.body.headers.Expires'
+      'Cache-Control': 'integration.response.body.headers.Cache-Control'
+      'Pragma': "'no-cache'"
+   standardResponseTemplate: "$input.path('$.body')"
+   errorResponseHeaders:
+      'Access-Control-Allow-Origin': "'*'"
+      'Expires': "'Thu, 19 Nov 1981 08:52:00 GMT'"
+      'Cache-Control': "'no-cache, max-age=0, must-revalidate'"
+      'Pragma': "'no-cache'"
+   errorResponseTemplate: "$input.path('$.errorMessage')"
+   # Here we are defining what would be under "responses" in your HTTP event
+   # if you were not using the custom variables.
+   standardResponses:
+      200:
+         headers: ${self:custom.standardResponseHeaders}
+         templates:
+            'application/json;charset=UTF-8': ${self:custom.standardResponseTemplate}
+      404:
+         headers: ${self:custom.errorResponseHeaders}
+         templates:
+            'application/json;charset=UTF-8': ${self:custom.errorResponseTemplate}
+         properties:
+            SelectionPattern: '.*\"status\":404.*'
+      500:
+         headers: ${self:custom.errorResponseHeaders}
+         templates:
+            'application/json;charset=UTF-8': ${self:custom.errorResponseTemplate}
+         properties:
+            SelectionPattern: '.*\"status\":500.*'
+   redirectResponses:
+      # Since we want to return 302 upon a successful completion, we remove the
+      # built-in default of 200
+      200:
+         headers:
+            Content-Type: "'text/html'"
+         templates:
+            'application/json;charset=UTF-8': "$input.path('$.body')"
+            'text/html;charset=UTF-8': "$input.path('$.body')"
+
+      302:
+         headers:
+            Location: "integration.response.body.errorMessage"
+         templates:
+            'application/json;charset=UTF-8': "$input.path('$.body')"
+            'text/html;charset=UTF-8': "$input.path('$.body')"
+         properties:
+            SelectionPattern: '.http.*'
+
+      404:
+         headers: ${self:custom.errorResponseHeaders}
+         templates:
+            'application/json;charset=UTF-8': "$input.path('$.body')"
+            'text/html;charset=UTF-8': "$input.path('$.body')"
+         properties:
+            SelectionPattern: '.*\"status\":404.*'
+      500:
+         headers: ${self:custom.errorResponseHeaders}
+         templates:
+            'application/json;charset=UTF-8': "$input.path('$.body')"
+            'text/html;charset=UTF-8': "$input.path('$.body')"
+         properties:
+            SelectionPattern: '.*\"status\":500.*'
 
 plugins:
-  - serverless-dynamodb-local
+  - serverless-plugin-multiple-responses
   - serverless-offline
 
 #
 #  - serverless-dynamodb-local
+#provider:
+#  name: aws
+#  runtime: nodejs4.3
+#  stage: dev
+#  region: us-east-1
+#  iamRoleStatements:
+#    - Effect: "Allow"
+#      Action:
+#        - "dynamodb:*"
+#      Resource:
+#        - "arn:aws:dynamodb:us-east-1:*"
 
 
-defaults:
-  stage: dev
-  region: us-east-1
+#custom:
+#  dynamodb:
+#    start:
+#      migration: true
+#    migration:
+#      dir: offline/migrations
+#resources:
+#  Resources: ${file(resources/tables.yml):migration}
+
+#defaults:
+#  stage: dev
+#  region: us-east-1
 
 # you can add packaging information here
 #package:
@@ -27,6 +119,8 @@ defaults:
 
 
 functions:
+
+
   home:
     handler: homeHandler.home
 
@@ -39,6 +133,8 @@ functions:
              headers:
                Content-Type: "'text/html'"
              template: $input.path('$')
+          responses: ${self:custom.redirectResponses}
+
 
   delivery:
     handler: lib/users/usersHandler.users
