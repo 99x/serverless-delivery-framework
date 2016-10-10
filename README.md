@@ -2,55 +2,72 @@
 
 [![Join the chat at https://gitter.im/99xt/serverless-delivery-framework](https://badges.gitter.im/99xt/serverless-delivery-framework.svg)](https://gitter.im/99xt/serverless-delivery-framework?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## Introduction
-Serverless delivery framework was developed using aws technologies with serverless framework for deliver software versions.
+## [*Introduction*] (https://99xt.github.io/serverless-delivery-framework/#introduction)
+Serverless delivery framework was developed using aws technologies with serverless framework for deliver software versions and Switch users for different software versions. [read more](https://99xt.github.io/serverless-delivery-framework)
 
 ## Architechture
+###[Application Architechture ](https://99xt.github.io/serverless-delivery-framework/#application-architechture)
+<img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true" />
+
+[READ MORE](https://99xt.github.io/serverless-delivery-framework/#application-architechture) Abount application architecture
 
 ###Directory structure:
 ```
 ├── api
-|── web
-|──delivery
-|  |──app
-|  |──images
-|  |──javascripts
-|  |──stylesheets
+|── config
+|   |──s3
+|── delivery
+|── gulp
 |──home
 |  |──lib
-|  |  |──resources
+|  |  |──users
+|  |──database
+|  |──offline
+|  |──resources
+|  |──homeHandler.js
+|  |──index.html
+|  |──package.json
 |──build
+|──config.json
 |──gulpfile.js
 |──serverless.yml
+|──package.json
 
 ```
-##Used Technologies
-[*Serveless Framework*](https://serverless.com/)
-
-[*AWS Lambda*] (https://aws.amazon.com/documentation/lambda/)
-
-[*AWS API Gateway*](https://aws.amazon.com/api-gateway/)
-
-## Setup Development Environment in Local Machine
-### clone and install depandancy
-| **Step** | **Command** |**Description**|
-|---|-------|------|
-|  1.  | `git clone https://github.com/99xt/serverless-delivery-framework.git` | clone project |
-|  2.  | `cd serverless-delivery-framework && npm install` | npm dependancy install 
-|  3.  | `gulp dependancy-install` | install all other depandancies of api and client 
-
-### Create s3 bucket and enable for static web hosting
-| **Step** | **Command** |**Description**|
-|---|-------|------|
-|  1.  | `gulp create-S3Bucket --name {YOUR-S3-Bucket-Name}` | create s3 bucket|
-|  2.  | `gulp config-S3Bucket --name {YOUR-S3-Bucket-Name}` | configure s3 bucket for static web hosting|
-
-### Serve Delivery Framework web client
-| **Step** | **Command** |**Description**|
-|---|-------|------|
-|  1.  | `gulp serve-client` | serve web client|
 
 
+## [*Getting Started*] (https://99xt.github.io/serverless-delivery-framework/#getting-started)
+###1. Clone and Install Depandancies
+Clone or download source from github
+
+`git clone https://github.com/99xt/serverless-delivery-framework.git`
+
+Install all npm dependancies
+
+`cd serverless-delivery-framework && npm install`
+`gulp dependancy-install`
+
+###2. Create Application Client
+
+You can use web folder to store your client application. This folder can be contain client app related file such as javascript, css etc. You can structure this folder according to your requrement. This folder is use only when you develop your client application in your local machine.
+
+This applicatiion contain contain simple index.html page if you needed you can replace it by your source code.
+
+`REPLACE web FOLDER BY CLIENT-APP`
+
+## [*Run Application*] (https://99xt.github.io/serverless-delivery-framework/#run-application)
+
+###1. Running the Delivery Framework Dashboard
+
+`gulp serve-dashboard`
+
+###2. Running the Application Client
+
+`gulp serve-client`
+
+###3. Running the Application API Gateways
+
+`gulp serve-api`
 
 
 ## <a name="contributing"></a>Contributing
