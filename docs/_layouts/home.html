@@ -1,0 +1,113 @@
+{% include header.html %}
+
+<div class="wrapper">
+
+    {% include page-nav.html %}
+
+    <section>
+        <h1>Introduction</h1>
+        <p>Today difficult to release different software version for differnt user without maintaining servers. For the maintaining servers is the cost effective thing for the medium sized company and small (startups) company. This framework is the solution
+            for the this senario.</p>
+        <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/intoduction.jpg?raw=true"></p>
+        <p>Using this framework you can release different versions for differnt users. This application applying the tool and technique that exist for serverless application framework and platforms for the overcome problem.</p>
+        <h2>Features and Limitations</h2>
+        <h3>Features</h3>
+        <ul>
+            <li>Support for Continuous Integration, Development and Delivery</li>
+            <li>Can be run diffent software version pararelly </li>
+            <li>Can be assigend and switch different users for diffrent software version</li>
+            <li>All the deployment process can be automated</li>
+        </ul>
+
+        <h3>Limitation</h3>
+        <ul>
+            <li>Support only aws serverless application</li>
+            <li>Database should be schema less</li>
+            <li>Support only 15 api gateway stages. But not limitation for client application</li>
+            <li>Application Authenctication part should be sapareted as another service </li>
+        </ul>
+        <h2>Technologies</h2>
+        <h3>Frameworks and Services</h3>
+        <ul>
+            <li><a href="https://serverless.com/">Serverless Framework</a></li>
+            <li><a href="https://serverless.com/">AWS API Gateways</a></li>
+            <li><a href="https://serverless.com/">AWS Lambda Function</a></li>
+            <li><a href="https://serverless.com/">AWS S3 Bucket</a></li>
+            <li><a href="https://serverless.com/">AWS DynamoDB </a></li>
+        </ul>
+        <h3>Dependancy Management</h3>
+        <ul>
+            <li><a href="https://www.npmjs.com/">NPM Packages</a></li>
+        </ul>
+        <h3>Build Authomation</h3>
+        <ul>
+            <li><a href="http://gulpjs.com/">GulpJs</a></li>
+        </ul>
+
+
+        <h2>Application Architechture</h2>
+        <p>Seerverless Delivery Framework is just appliation of serverless platforms to deliver software versions to diffent users. Application users can use software diffent versions parallelly. Using this application system admin, developers can switch
+            software versions for differnt end user. This framework can be used for any serverless framework related project.</p>
+        <p><img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true"></p>
+        <p> The diagrame above shows the technology used to deliver software version for simple web application. Let's look at what each componet provides</p>
+        <h3>API Gateway</h3>
+        <p> Api gateway can be contain deferent api gateway stages. Those stages has separate lambda function.But every stage should be index page lambda function.When user request application URL.(eg. https://testapi.us-east-1.amazonaws.com/dev/home ) if
+            user is unautherized it is redirect for authentication otherwise apigaway respond user relevent software version index page using indexpage lambda function. AWS api gateway can be store conatain only 15 stages. Then there is a limitation for
+            api gateway deplyment</p>
+        <h3> Index Page Lambda</h3>
+        <p> This lambda function dynamicaly generate application client index.html page after the </p>
+        <h3>User Version Dynamodb Table</h3>
+        <p> This table contatin user id, user relevent version and other information.</p>
+        <h3> Authentication Application</h3>
+        <p> Authenticate unautherized users this application can be any other service such as Auth0, Cognito etc. after sucessfull authentication redirect to api gateway then api gateway relevent software versions for autherized user.</p>
+        <h3>S3 Bucket</h3>
+        <p> This used for the client side application deployment. When deply new version of software this bucket authomatically create new folder and store all files contain that folder. We can create large number of folders in s3 bucket then there is no
+            restriction for large number of deplyment client application</P>
+
+        <h1>Getting Started</h1>
+        <h2>Setup Application</h2>
+        <h3>1. Clone and Install Depandancies</h3>
+        <p> Clone or download source from github</p>
+
+        <pre><code>$ git clone https://github.com/99xt/serverless-delivery-framework.git</code></pre>
+        <p>Install all npm dependancies </p>
+        <pre><code>$ cd serverless-delivery-framework && npm install</code></pre>
+        <pre><code>$ gulp dependancy-install</code></pre>
+
+        <h3>2. Create Application Client</h3>
+        <p>You can use web folder to store your client application. This folder can be contain client app related file such as javascript, css etc. You can structure this folder according to your requrement. This folder is use only when you develop your
+            client application in your local machine.</p>
+        <p> This applicatiion contain contain simple index.html page if you needed you can replace it by your source code.</p>
+
+        <pre><code>REPLACE web FOLDER BY CLIENT-APP</code></pre>
+
+        <h2>Run Application</h2>
+        <h3>1. Running the Delivery Framework Dashbord</h3>
+        <pre><code>$ gulp serve-client</code></pre>
+
+        <h3>2. Running the Application Client</h3>
+        <pre><code>$ gulp serve-client</code></pre>
+
+        <h3>3. Running the Application API Gateways</h3>
+        <pre><code>$ gulp deploy-api-offline </code></pre>
+
+
+        <h2>Deploy Application</h2>
+
+        <h3>1. Create s3 Bucket and Configure</h3>
+        <p>Create simple storage service (S3) bucket for store client application source</p>
+        <pre><code>$ gulp create-S3Bucket --name {YOUR-S3-Bucket-Name}</code></pre>
+
+        <p>Add bucket policy and comfigure for static web hosting</p>
+        <pre><code>$ gulp config-S3Bucket --name {YOUR-S3-Bucket-Name}</code></pre>
+
+        <p>Deploy your application client on S3 bucket. When execute follow command automatically create folder for application version</p>
+        <pre><code>$ gulp deploy-webclient --version {Application-Version}</code></pre>
+        <p> If needed deploy your authecation application. same S3 bucket can be used. This is depend on application requrement</p>
+        <pre><code>$ gulp deploy-authApp </code></pre>
+        <p></p>
+        <pre><code>  $ gulp deploy-api --stage {Stage-Name}</code></pre>
+
+    </section>
+
+    {{ content }} {% include footer.html %}

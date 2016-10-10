@@ -6,7 +6,9 @@
   "dependencies": {
     "aws-sdk": "^2.6.6",
     "jsend": "^1.0.2",
-    "lodash": "^4.16.2"
+    "lodash": "^4.16.2",
+    "serverless-dynamodb-local": "^1.0.2",
+    "serverless-plugin-multiple-responses": "^1.0.0"
   },
   "devDependencies": {
     "serverless-offline": "git+https://github.com/dherault/serverless-offline.git/#serverless_v1"
