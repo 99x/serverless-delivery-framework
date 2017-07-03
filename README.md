@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/99xt/serverless-delivery-framework](https://badges.gitter.im/99xt/serverless-delivery-framework.svg)](https://gitter.im/99xt/serverless-delivery-framework?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## [*Introduction*] (https://99xt.github.io/serverless-delivery-framework/#introduction)
+## [*Introduction*](https://99xt.github.io/serverless-delivery-framework/#introduction)
 Serverless delivery framework was developed using aws technologies with serverless framework for deliver software versions and Switch users for different software versions. [read more](https://99xt.github.io/serverless-delivery-framework)
 
 ## Architechture
@@ -37,7 +37,7 @@ Serverless delivery framework was developed using aws technologies with serverle
 
 
 ## [*Getting Started*] (https://99xt.github.io/serverless-delivery-framework/#getting-started)
-###1. Clone and Install Depandancies
+### 1. Clone and Install Depandancies
 Clone or download source from github
 
 `git clone https://github.com/99xt/serverless-delivery-framework.git`
@@ -47,7 +47,7 @@ Install all npm dependancies
 `cd serverless-delivery-framework && npm install`
 `gulp dependancy-install`
 
-###2. Create Application Client
+### 2. Create Application Client
 
 You can use web folder to store your client application. This folder can be contain client app related file such as javascript, css etc. You can structure this folder according to your requrement. This folder is use only when you develop your client application in your local machine.
 
@@ -57,15 +57,15 @@ This applicatiion contain contain simple index.html page if you needed you can r
 
 ## [*Run Application*] (https://99xt.github.io/serverless-delivery-framework/#run-application)
 
-###1. Running the Delivery Framework Dashboard
+### 1. Running the Delivery Framework Dashboard
 
 `gulp serve-dashboard`
 
-###2. Running the Application Client
+### 2. Running the Application Client
 
 `gulp serve-client`
 
-###3. Running the Application API Gateways
+### 3. Running the Application API Gateways
 
 `gulp serve-api`
 
