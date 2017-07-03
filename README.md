@@ -71,6 +71,6 @@ This applicatiion contain contain simple index.html page if you needed you can r
 
 
 ## <a name="contributing"></a>Contributing
-We love our contributors! Please read our [README file](README.md) to learn how you can start project for development and use [gitter chat] (https://gitter.im/99xt/interns-portal) .
+We love our contributors! Please read our [README file](README.md) to learn how you can start project for development and use [gitter chat](https://gitter.im/99xt/interns-portal) .
 
 
