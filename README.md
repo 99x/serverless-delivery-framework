@@ -36,7 +36,7 @@ Serverless delivery framework was developed using aws technologies with serverle
 ```
 
 
-## [*Getting Started*] (https://99xt.github.io/serverless-delivery-framework/#getting-started)
+## [*Getting Started*](https://99xt.github.io/serverless-delivery-framework/#getting-started)
 ### 1. Clone and Install Depandancies
 Clone or download source from github
 
@@ -55,7 +55,7 @@ This applicatiion contain contain simple index.html page if you needed you can r
 
 `REPLACE web FOLDER BY CLIENT-APP`
 
-## [*Run Application*] (https://99xt.github.io/serverless-delivery-framework/#run-application)
+## [*Run Application*](https://99xt.github.io/serverless-delivery-framework/#run-application)
 
 ### 1. Running the Delivery Framework Dashboard
 
