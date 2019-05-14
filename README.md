@@ -9,7 +9,7 @@ Serverless delivery framework was developed using aws technologies with serverle
 ### [Application Architechture](https://99xt.github.io/serverless-delivery-framework/#application-architechture)
 <img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true" />
 
-[READ MORE](https://99xt.github.io/serverless-delivery-framework/#application-architechture) Abount application architecture
+[READ MORE](https://99xt.github.io/serverless-delivery-framework/#application-architechture) About application architecture
 
 ### Directory structure:
 ```
