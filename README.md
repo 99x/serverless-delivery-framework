@@ -1,4 +1,4 @@
-#Serverless Delivery Framework
+# Serverless Delivery Framework
 
 [![Join the chat at https://gitter.im/99xt/serverless-delivery-framework](https://badges.gitter.im/99xt/serverless-delivery-framework.svg)](https://gitter.im/99xt/serverless-delivery-framework?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -6,12 +6,12 @@
 Serverless delivery framework was developed using aws technologies with serverless framework for deliver software versions and Switch users for different software versions. [read more](https://99xt.github.io/serverless-delivery-framework)
 
 ## Architechture
-###[Application Architechture ](https://99xt.github.io/serverless-delivery-framework/#application-architechture)
+### [Application Architechture](https://99xt.github.io/serverless-delivery-framework/#application-architechture)
 <img src="https://github.com/niroshannrsh/serverless-delivery-framework/blob/master/docs/img/Relese-pipeline-1.jpg?raw=true" />
 
 [READ MORE](https://99xt.github.io/serverless-delivery-framework/#application-architechture) Abount application architecture
 
-###Directory structure:
+### Directory structure:
 ```
 ├── api
 |── config
