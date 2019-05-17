@@ -4,7 +4,7 @@
   "description": "Project for deliver software verstion using serverless framework",
   "main": "\\",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests added\""
   },
   "repository": {
     "type": "git",
